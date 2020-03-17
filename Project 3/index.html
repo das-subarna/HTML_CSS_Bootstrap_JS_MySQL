@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign up</title>
+    </head>
+<style>
+    body {
+  padding: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: lightsteelblue;
+}
+.container{
+  width: 450px;
+  align: center;
+  border: 1px solid grey;
+  padding: 10px 30px;
+  margin: auto;
+  border-radius: 10px;
+  height: auto;
+  background-color: white;
+  box-shadow: 5px 10px #888888;
+}
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+input[type=text], input[type=tel] {
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 10px 0;
+  display: inline-block;
+  border: none;
+  background: gainsboro;
+  border-radius: 10px;
+}
+
+input[type=text]:focus, input[type=tel]:focus {
+  background-color: ghostwhite;
+  outline: none;
+}
+input[type=checkbox]{
+  display: inline-block;
+  border: none;
+}
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 40%;
+  padding: 5px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 5px 0 10px 0;
+  border: none;
+  cursor: pointer;
+  width: 96%;
+  opacity: 0.9;
+  border-radius: 10px;
+}
+button:hover {
+  background-color: rgb(35, 153, 35);
+</style>
+<body>
+
+<form action="#" method="post">
+    <div class="container">
+        <h1> Sign up </h1>
+        <hr>
+        <label for="fname"><b>First Name *</b></label>
+        <input type="text" placeholder="Enter First Name" name="fname" required>
+        <label for="lname"><b>Last Name</b></label>
+        <input type="text" placeholder="Enter Last Name" name="lname">
+        <label for="email"><b>Email *</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+        <label for="mobile"><b>Mobile Number</b></label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter 10 Digit Mobile Number" maxlength="10">
+        <label for="select"><b>Select your choices</b></label><br><br>
+        <div class="row">
+            <div class="column">
+                <input type="checkbox" id="c1" name="c1" value="c1">
+                <label for="c1"> Sports </label><br>
+                <input type="checkbox" id="c2" name="c2" value="c2">
+                <label for="c2"> Politics </label><br>
+                <input type="checkbox" id="c3" name="c3" value="c3">
+                <label for="c3"> Technology </label><br>
+            </div>
+            <div class="column">
+                <input type="checkbox" id="c4" name="c4" value="c4">
+                <label for="c4"> Auto </label><br>
+                <input type="checkbox" id="c5" name="c5" value="c5">
+                <label for="c5"> Lifestyle </label><br>
+                <input type="checkbox" id="c6" name="c6" value="c6">
+                <label for="c6"> Business </label><br>
+            </div>
+        </div><br>
+        <label for="select"><b>Notify me of newsletters</b></label><br><br>
+        <label>
+            <input type="radio" checked="checked" name="notify" style="margin-bottom:15px"> Yes
+            <input type="radio" checked="checked" name="notify" style="margin-bottom:15px"> No
+        </label>  
+        <p>By signing up, you agree to our <a href="#" style="color:dodgerblue">Terms & Conditions</a>.</p>
+        <button type="submit" title="Click Here to Sign up">Sign Up</button>
+    </div>

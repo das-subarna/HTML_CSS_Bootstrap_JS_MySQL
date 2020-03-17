@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Age Calculator</title>
+</head>
+
+<body>
+    <div class="container col-md-4 p-4">
+        <h5>Age Calculator</h5>
+        <hr>
+        <form action="">
+            <div class="form-group">
+                <label for="num1">Enter Full Name : </label>
+                <input type="text" class="form-control" id="name" onfocusout="valid1()" required>
+                <small class="form-text text-muted">Format : FirstName LastName</small>
+            </div>
+            <div class="form-group">
+                <label for="num2">Enter your DOB : </label>
+                <input type="text" class="form-control" id="dob" onfocusout="valid2()">
+                <small class="form-text text-muted">Format : DD-MM-YYYY</small>
+            </div>
+            <div class="form-group">
+                <p class="btn btn-primary" onclick="agecalc()"> Show Age </p>
+            </div>
+            <div class="form-group">
+                <p id="output" class="bg-secondary text-white p-2 rounded text-center">
+                    Age will be Displayed Here
+                </p>
+            </div>
+        </form>
+    </div>
+
+
+    <script>
+        function valid1() {
+            var name = document.getElementById('name').value;
+            //regex
+            var letters = /^[A-Za-z]+[\ ]+[A-Za-z]+$/;
+            //name validation
+            console.log(name);
+            if (name.match(letters)) {
+                return true;
+            }
+            else {
+                alert('Invalid Name Format!');
+                document.getElementById('name').blur();
+                return;
+            }
+        }
+        function valid2() {
+            //date validation
+            var dob = document.getElementById('dob').value;
+            var arrdate = dob.split('-');
+            var dd = parseInt(arrdate[0]);
+            var mm = parseInt(arrdate[1]);
+            var yy = parseInt(arrdate[2]);
+            var ListofDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            //regex
+            var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\-](0?[1-9]|1[012])[\-]\d{4}$/;
+            //check
+            if (dob.match(dateformat)) {
+                if (mm == 1 || mm > 2) {
+                    if (dd > ListofDays[mm - 1]) {
+                        alert('Invalid date format!');
+                        document.getElementById('dob').blur();
+                        return;
+                    }
+                }
+                if (mm == 2) {
+                    var lyear = false;
+                    if ((!(yy % 4) && yy % 100) || !(yy % 400)) {
+                        lyear = true;
+                    }
+                    if ((lyear == false) && (dd >= 29)) {
+                        alert('Invalid date format!');
+                        document.getElementById('dob').blur();
+                        return;
+                    }
+                    if ((lyear == true) && (dd > 29)) {
+                        alert('Invalid date format!');
+                        document.getElementById('dob').blur();
+                        return;
+                    }
+                }
+            }
+            else {
+                alert('Invalid date format!');
+                document.getElementById('dob').blur();
+                return;
+            }
+        }
+
+        function agecalc() {
+            var now = new Date();
+            console.log("Now" + now);
+            var birthDate = new Date(document.getElementById('dob').value);
+            otherDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+            var years = (otherDate.getFullYear() - birthDate.getFullYear());
+            if (years < 1) {
+                document.getElementById('output').innerHTML = ('Not Yet Born!');
+                return;
+            }
+
+            console.log(years);
+            document.getElementById('output').innerHTML = ('Present Age : ' + years + ' Years')
+        }
+
+
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

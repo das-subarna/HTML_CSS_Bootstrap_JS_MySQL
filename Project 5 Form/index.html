@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Sign Up</title>
+  </head>
+  <body>
+      <div class="container col-md-4 p-5 bg-light rounded mt-5">
+        <form>
+            <h1> Sign up </h1>
+            <hr>
+            <div class="form-group">
+                <label for="fname">Name *</label>
+                <div class="row">
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="First name *" required>
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Last name">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="text" placeholder="Enter Email *" name="email" required class="form-control">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter 10 Digit Mobile Number" maxlength="10" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="select">Select your choices</label><br><br>
+                <div class="row  px-lg-5">
+                    <div class="col">
+                        <input type="checkbox" id="c1" name="c1" value="c1">
+                        <label for="c1"> Sports </label><br>
+                        <input type="checkbox" id="c2" name="c2" value="c2">
+                        <label for="c2"> Politics </label><br>
+                        <input type="checkbox" id="c3" name="c3" value="c3">
+                        <label for="c3"> Technology </label><br>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="c4" name="c4" value="c4">
+                        <label for="c4"> Auto </label><br>
+                        <input type="checkbox" id="c5" name="c5" value="c5">
+                        <label for="c5"> Lifestyle </label><br>
+                        <input type="checkbox" id="c6" name="c6" value="c6">
+                        <label for="c6"> Business </label><br>
+                    </div>
+                </div><br>
+                <div class="form-check-label">
+                <label for="select">Notify me of newsletters &nbsp; </label>
+                <label>
+                    <input type="radio" checked="checked" name="notify" style="margin-bottom:15px"> Yes  &nbsp;
+                    <input type="radio" checked="checked" name="notify" style="margin-bottom:15px"> No
+                </label>  
+                </div>
+                
+                
+            </div>
+        </form>
+        <form class="form-inline">
+                <div class="form-group">
+                    <p>By signing up, you agree to our <a href="#" style="color:dodgerblue">Terms & Conditions</a>.</p>
+                </div> &nbsp; &nbsp; &nbsp; &nbsp;
+                <button type="submit" class="btn btn-primary mb-2">Confirm Sign Up</button>
+            </form>
+          
+      </div>
+
+      <style>
+          body{
+              background-color: gainsboro;
+          }
+      </style>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
