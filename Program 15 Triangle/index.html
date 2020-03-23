@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area of a Triangle</title>
+</head>
+
+<body>
+        <label for="s1">Side 1:</label>
+        <input type="text" id="s1" name="s1"><br><br>
+        <label for="s2">Side 2:</label>
+        <input type="text" id="s2" name="s2"><br><br>
+        <label for="s3">Side 3:</label>
+        <input type="text" id="s3" name="s3"><br><br>
+        <input type="submit" value="Calcuate Area" onclick="area1()"><br><br>
+        <span id="output"> Output Here </span>
+    
+
+    <script>
+        function area1(){
+        var side1 = document.getElementById("s1").value;
+        var side2 = document.getElementById("s2").value;
+        var side3 = document.getElementById("s3").value;
+        var s = (Number(side1) + Number(side2) + Number(side3)) / 2;
+        var area = Math.sqrt(s * ((s - side1) * (s - side2) * (s - side3)));
+        document.getElementById("output").innerText=area;
+        }
+    </script>
+</body>
+
+</html>

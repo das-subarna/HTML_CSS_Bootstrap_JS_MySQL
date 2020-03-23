@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Number Match</title>
+</head>
+
+<body>
+    <div class="container col-md-4 p-4">
+        <h5>Number Guessing</h5>
+        <hr>
+        <div class="form-group">
+            <label for="num1">Guess a Number : </label>
+            <input type="number" class="form-control" id="num1">
+        </div>
+        <button type="submit" class="btn btn-primary" onclick="guess()"> Submit </button>
+        <span id="output" class="bg-secondary text-white p-2 rounded float-right"> System Generated No Here </span>
+
+    </div>
+
+
+    <script>
+        function guess() {
+            var x = document.getElementById('num1').value;
+            var y = Math.floor(Math.random() * 10 + 1);
+            document.getElementById('output').innerText = 'Number generated was : ' + y;
+            if (x == y) {
+                alert("GOOD WORK! YOUR GUESS IS CORRECT");
+                return;
+            }
+            else{
+                alert("SORRY! NOT MATCHED");
+            }          
+        }
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
