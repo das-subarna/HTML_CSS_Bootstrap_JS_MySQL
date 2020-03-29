@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWAP</title>
+</head>
+
+<body>
+    <script>
+        //generic function
+        function swap1(x, y) {    
+            return [y,x];        
+        }
+        
+        //arrow function
+        swap2 = (x,y) => {return [y,x]}; 
+
+        //console log
+        console.log('by function ' + swap1(5,7));
+        console.log('by arrow '+ swap2(5,7));
+    </script>
+</body>
+
+</html>

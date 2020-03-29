@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Employee Database | JS DOM</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="bg-info">
+
+    <div class="container p-4">
+        <h2 class="text-center text-light">EMPLOYEE DATABASE</h2>
+        <br>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-5">
+
+                <form class="bg-white p-4" name="entryForm">
+                    <div class="form-group">
+                        <label for="eid">Employee ID</label>
+                        <input type="number" class="form-control" id="eid" placeholder="Enter employee ID" name="eid">
+                    </div>
+                    <div class="form-group">
+                        <label for="fname">First Name:</label>
+                        <input type="text" class="form-control" id="fname"
+                            placeholder="Enter first name" name="fname">
+                    </div>
+                    <div class="form-group">
+                        <label for="lname">Last Name:</label>
+                        <input type="text" pattern="[a-zA-Z]+" class="form-control" id="lname"
+                            placeholder="Enter last name" name="lname">
+                    </div>
+                    <div class="form-group">
+                        <label for="mail">Email ID:</label>
+                        <input type="email" class="form-control" id="mail" placeholder="Enter email" name="mail">
+                    </div>
+                    <button type="button" id="addbtn" class="btn btn-primary" onclick="addEntry()">Add Entry</button>
+                    <button type="button" id="updatebtn" class="btn btn-success" onclick="updateEntry()"
+                        style="display:none">Update Entry</button>
+                </form>
+            </div><!-- col 1 ends-->
+            <div class="col-md-7">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="myInput" onkeyup="mySearch()"
+                        placeholder="Search by ID or Name" aria-describedby="basic-addon1">
+                </div>
+                <div class="overflow-auto">
+                    <table class="table table-hover bg-light" id="empTable">
+                        <thead>
+                            <tr>
+                                <th>#ID</th>
+                                <th>Firstname</th>
+                                <th>Lastname</th>
+                                <th>Email</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- DATAS WILL BE ADDED HERE -->
+                        </tbody>
+                    </table>
+                </div>
+            </div> <!-- col 2 ends-->
+        </div>
+    </div>
+
+<script src="JS.js"></script>
+</body>
+
+</html>
